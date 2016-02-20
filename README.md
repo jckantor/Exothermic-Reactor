@@ -3,9 +3,11 @@ Simulation and Control of an Exothermic Stirred Tank Reactor
 
 *Simulation and Control of an Exothermic Stirred Tank Reactor* is an interactive demonstration of feedback control for an exothermic, continuous stirred tank reactor (CSTR). It is intended for use as lecture demonstration of feedback control for a strongly nonlinear system, and to reinforce control concepts through homework exercises. 
 
-<img src="reactor_fig.png" alt="Exothermic Reactor" width="480" align="center">
+<p align="center">
+  <img src="reactor_fig.png">
+</p>
 
-->![Exothermic Reactor](reactor_fig.png)<-
+![Exothermic Reactor](reactor_fig.png)
 
 ## Running
 
