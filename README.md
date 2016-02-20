@@ -5,6 +5,8 @@ Simulation and Control of an Exothermic Stirred Tank Reactor
 
 <img src="reactor_fig.png" alt="Exothermic Reactor" width="480" align="center">
 
+->![Exothermic Reactor](reactor_fig.png)<-
+
 ## Running
 
 You can open and run the notebook directly from a browser window by clicking on this button:
