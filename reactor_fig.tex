@@ -39,20 +39,22 @@
   % Cooling lines
   \draw [thick,<-] (drum) ++(-0.25,0) -- ++ (-0.5,0) node[left] 
   	{\footnotesize \shortstack{Cooling\\ Water}};
-  \draw [thick, ->] (drum) ++(2.25,-1.5) -- ++(1.5,0) ++ (0.25,0) 
+  \draw [thick, ->] (drum) ++(2.25,-1.5) -- ++(1.25,0) ++ (0.25,0) 
     --++(0.25,0.15) --++(0,-0.3)
     --++(-0.5,0.3) --++(0,-0.3) --++(0.25,0.15) --++(0,0.3)
     --++(0.2,0) arc(0:180:0.2cm) --++(0.2,0) ++ (0.25,-0.3) -- ++(0.5,0);
   
   % Control elements
-  \draw (drum) ++ (2.75,0) circle (0.25cm) node (TT1) {\footnotesize TT};
-  \draw (drum) ++ (4.0,0) circle (0.25cm) node (TC1) {\footnotesize TC};
+  \draw (drum) ++ (2.75,-0.5) circle (0.25cm) node (TT1) {\footnotesize TT};
+  \draw (drum) ++ (3.75,-0.5) circle (0.25cm) node (TC1) {\footnotesize TC};
   \draw (drum) ++ (1.5,1.25) circle (0.25cm) node (TT2) {\footnotesize TT};
+  \draw (TT2) ++ (2.25,0) node (control) {\footnotesize Control?};
   
   \draw (TT1) --++(-0.5,0);
-  \draw (TT1) -- (TC1) --++ (0,-1);
-  \draw (TC1) --++(0,0.5) node [above] {\footnotesize Setpoint $T_c$};
+  \draw (TT1) -- (TC1) --++ (0,-0.5);
   \draw (TT2) --++(0,-1.5);
+  \draw (TT2) -- (control) -- (TC1) node[midway,right] 
+  	{\footnotesize \shortstack{$T_c$ \\ Setpoint}};
    
   
   % connecting the units
