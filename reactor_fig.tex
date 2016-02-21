@@ -1,7 +1,7 @@
 \documentclass[tikz]{standalone}
 \usepackage{units}
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
 \normalfont
 
 \begin{document}
@@ -27,18 +27,20 @@
   \draw[fill=red!25] (drum) ++(0,-1.5) arc (240:300:2cm) -- ++(0,1.5)
     arc(-60:-120:0.333cm) arc(-60:-120:0.334cm) arc(-60:-120:0.333cm) 
     arc(-60:-120:0.333cm) arc(-60:-120:0.334cm) arc(-60:-120:0.333cm);
-  \draw[thick, <-] (drum) ++(0.5,0.73) -- ++(0,0.77); 
+  \draw[thick, <-] (drum) ++(0.5,0.73) -- ++(0,0.52); 
   \draw[thick] (drum) ++(1,-1.768) --++ (0,-0.732);
   
   % Stirring paddle
-  \draw [thick] (drum) ++ (1,-0.75) -- ++(-0.25,0) -- ++(0,0.25) 
-    -- ++(-0.6,0) -- ++(0,-0.5) -- ++(0.6,0) -- ++(0,0.25) -- ++(0.25,0)
-    -- ++(0.25,0) -- ++(0,0.25) -- ++(0.6,0) -- ++(0,-0.5) -- ++(-0.6,0)
-    -- ++(0,0.25) -- ++(-0.25,0) -- ++(0,1.768);
+  \draw [thick] (drum) ++ (1,0.75) --++(0,-1.65) -- ++(-0.25,0) -- ++(0,0.2) 
+    -- ++(-0.6,0) -- ++(0,-0.4) -- ++(0.6,0) -- ++(0,0.2) -- ++(0.25,0)
+    -- ++(0.25,0) -- ++(0,0.2) -- ++(0.6,0) -- ++(0,-0.4) -- ++(-0.6,0)
+    -- ++(0,0.2) ++(-0.25,0);
+  \draw [fill=black!100] (drum) ++ (1,1) --++(0.2,0) --++ (0,-0.22)
+    --++(-0.4,0) --++(0,0.22) --++(0.2,0);
     
   % Cooling lines
   \draw [thick,<-] (drum) ++(-0.25,0) -- ++ (-0.5,0) node[left] 
-  	{\footnotesize \shortstack{Cooling\\ Water}};
+  	{\footnotesize \shortstack{Cooling Water}};
   \draw [thick, ->] (drum) ++(2.25,-1.5) -- ++(1.25,0) ++ (0.25,0) 
     --++(0.25,0.15) --++(0,-0.3)
     --++(-0.5,0.3) --++(0,-0.3) --++(0.25,0.15) --++(0,0.3)
@@ -52,20 +54,19 @@
   
   \draw (TT1) --++(-0.5,0);
   \draw (TT1) -- (TC1) --++ (0,-0.5);
-  \draw (TT2) --++(0,-1.5);
+  \draw (TT2) --++(0,-1.75);
   \draw (TT2) -- (control) -- (TC1) node[midway,right] 
   	{\footnotesize \shortstack{$T_c$ \\ Setpoint}};
-   
   
   % connecting the units
-  %\draw[->,thick] (feed) node [left] {$\dot{m}_1 = \unitfrac[4]{kg}{s}$} -- (drum);
-  \draw[thick] (drum) ++ (0.5,1.5) -- ++(-0.75,0) 
-    node [left] {\footnotesize $C_f = \unitfrac[1]{gmol}{liter}$};
+  \draw[thick] (drum) ++ (0.5,1.25) -- ++(-0.75,0) 
+    node [left] {\footnotesize 
+    \shortstack{$C_f = \unitfrac[1]{gmol}{liter}$\\ $T_f = \unit[350]{K}$}};
   \draw[->,thick] (drum) ++ (1,-2.5) -- ++(1.25,0) 
     node [right] {\footnotesize $q = \unitfrac[100]{liter}{min}$};
   
   % label units
-  \draw (drum) ++ (1,-1.25) node {\footnotesize $V = \unit[100]{liters}$};
+  \draw (drum) ++ (-1.5,-1.25) node {\footnotesize $V = \unit[100]{liters}$};
   
 \end{tikzpicture}
 \end{document}
